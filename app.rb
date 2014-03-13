@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'better_errors'
+require 'json'
 require 'net/http'
 
 configure :development do
@@ -9,13 +10,13 @@ configure :development do
   BetterErrors.application_root = File.expand_path('..', __FILE__)
 end
 
-repositories = %w(
-  ***REMOVED***
-  ***REMOVED***
-  ***REMOVED***
-)
+def retrieve_repositories_status()
+  repositories = %w(
+    ***REMOVED***
+    ***REMOVED***
+    ***REMOVED***
+  )
 
-get '/' do
   repositories_status = Hash.new
   repositories.each do |repo|
     uri = URI("http://***REMOVED***/github.com/#{repo}/status.png?branch=master")
@@ -26,5 +27,18 @@ get '/' do
 
     repositories_status[repo.to_sym] = match.captures[0]
   end
+  repositories_status
+end
+
+get '/' do
+  repositories_status = retrieve_repositories_status
   erb :index, :locals => { :repositories_status => repositories_status }
 end
+
+get '/statuses.json' do
+  content_type :json
+  retrieve_repositories_status().to_json
+
+end
+
+
