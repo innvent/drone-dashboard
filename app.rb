@@ -11,17 +11,16 @@ configure :development do
   BetterErrors.application_root = File.expand_path('..', __FILE__)
 end
 
-set :repositories, %w(
-    ***REMOVED***
-    ***REMOVED***
-    ***REMOVED***
-  )
+app_config = YAML.load_file('config.yml')
+
+set :drone_url, app_config["drone_url"]
+set :repositories, app_config["repositories"]
 set :public_folder, 'assets/'
 
 def retrieve_repositories_status()
   repositories_status = Hash.new
-  options.repositories.each do |repo|
-    uri = URI("http://***REMOVED***/github.com/#{repo}/status.png?branch=master")
+  settings.repositories.each do |repo|
+    uri = URI("#{settings.drone_url}/github.com/#{repo}/status.png?branch=master")
 
     response = Net::HTTP.get_response(uri)
     location = response.header['Location']
