@@ -32,7 +32,7 @@ end
 
 get '/statuses' do
   repositories_status = retrieve_repositories_status
-  erb :index, :locals => { :repositories_status => repositories_status }
+  erb :statuses, :locals => { :repositories_status => repositories_status }
 end
 
 get '/statuses.json' do
