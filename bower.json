@@ -16,7 +16,7 @@
   "exportsOverride": {
     "*": {
       "javascript" : [
-        "**/dist/*.js",
+        "**/jquery.min.js",
         "require.js",
         "**/html5shiv.js"
       ],

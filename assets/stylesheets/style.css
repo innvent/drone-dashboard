@@ -8,6 +8,76 @@
   Last update: 13/03/2014 
 */
 
+@import '../stylesheets/normalize-css/normalize-css.css';
+@charset 'UTF-8';
+/* Normalize */
+/* Variables */
+/* Useful Mixins */
+/*  Helpful Classes
+  ========================================================================== */
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.hidden {
+  display: none;
+}
+.visible {
+  display: block;
+}
+.inline {
+  display: inline-block;
+  vertical-align: top;
+}
+.align-top {
+  vertical-align: top;
+}
+.align-middle {
+  vertical-align: middle;
+}
+.align-bottom {
+  vertical-align: bottom;
+}
+.no-margin-left {
+  margin-left: 0;
+}
+.no-margin-right {
+  margin-right: 0;
+}
+.center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-left {
+  text-align: left;
+}
+.fixed {
+  width: 100%;
+  position: fixed !important;
+  z-index: 10000;
+}
+.invisible {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  visibility: hidden;
+}
+.bg-dark-transparent {
+  color: #fff;
+  background: #0d4759;
+  background: rgba(0, 60, 74, 0.9);
+}
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/*  Helpful Mixins
+   ========================================================================== */
+/* Custom Styles */
 html {
   font-size: 62.5%;
 }
@@ -18,10 +88,18 @@ body {
 }
 body {
   color: #003c4a;
+  font-size: 14px;
+  line-height: 16px;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
   font-weight: 400;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   overflow-x: hidden;
   background: #003c4a;
   -webkit-font-smoothing: antialiased;
   -webkit-overflow-scrolling: touch;
+}
+/* Media Queries */
+@media (max-width: 1024px) {
+  
 }
