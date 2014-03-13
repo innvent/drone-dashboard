@@ -17,8 +17,7 @@
     "*": {
       "javascript" : [
         "**/jquery.min.js",
-        "require.js",
-        "**/html5shiv.js"
+        "require.js"
       ],
       "stylesheets" : [
         "normalize.css"
