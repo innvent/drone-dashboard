@@ -2,13 +2,20 @@ GEM
   remote: https://rubygems.org/
   specs:
     awesome_print (1.2.0)
+    better_errors (1.1.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     celluloid (0.15.2)
       timers (~> 1.1.0)
     celluloid-io (0.15.0)
       celluloid (>= 0.15.0)
       nio4r (>= 0.5.0)
     coderay (1.1.0)
+    debug_inspector (0.0.2)
     dotenv (0.10.0)
+    erubis (2.7.0)
     ffi (1.9.3)
     foreman (0.63.0)
       dotenv (>= 0.7)
@@ -46,6 +53,8 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print (~> 1.2)
+  better_errors
+  binding_of_caller
   foreman (~> 0.63)
   pry (~> 0.9)
   rerun (~> 0.9)
