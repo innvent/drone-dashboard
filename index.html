@@ -7,12 +7,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Stylesheets -->
-  <link href="stylesheets/style.css">
+  <link rel="stylesheet" href="stylesheets/normalize-css/normalize.css">
+  <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 <body>
-  <h1>Innvent Drone Dashboard</h1>
 
-  <div id="container"></div>
+  <ul id="repositories-list"></ul>
+
+  <script id=template type=tuts/template>
+    <li>
+      <h2 class="repo-name">{{ name }}</h2>
+      <h3 class="repo-status {{ status }}">{{ status }}</h3>
+    </li>
+  </script>
 
   <!-- Javascripts -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
