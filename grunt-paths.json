@@ -1,0 +1,7 @@
+{
+  "assets": "./assets/",
+  "less": "./assets/less/",
+  "images": "./assets/images/",
+  "stylesheets": "./assets/stylesheets/",
+  "javascripts": "./assets/javascript/"
+}

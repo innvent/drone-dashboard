@@ -1,0 +1,46 @@
+//  Variables
+// ==========================================================================
+@sans-serif: Arial, sans-serif;
+@f-helvetica: "Helvetica Neue", Helvetica, @sans-serif;
+
+//  Colors
+// ==========================================================================
+@c-default:                       @green-dark;
+@bg-default:                      @green-dark;
+@green:                           #457681;
+@green-light:                     #1cafbb;
+@green-fade:                      #a0d4d8;
+@green-dark:                      #003c4a;
+@blue:                            #1fafbb;
+@blue-light:                      #25aeba;
+@blue-darker:                     #003c4a;
+@blue-dark:                       #195867;
+@blue-fade:                       #9cd3d8;
+@blue-fade-lighter:               darken(#eff8f8, 3%);
+@orange:                          #e87a2f;
+@orange-fade:                     #ffa161;
+@gray:                            #909697;
+@gray-darker:                     #717475;
+@white:                           #fff;
+@red:                             #e10404;
+
+// Wrappers
+// =======================================================
+html { font-size: 62.5% }
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  color: @c-default;
+  //.font-size(14,16);
+  font-weight: 400;
+  font-family: @f-helvetica;
+  overflow-x: hidden;
+  background: @bg-default;
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+}
+

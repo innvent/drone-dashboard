@@ -1,0 +1,10 @@
+{
+  "name": "/*\n  Project name: <%= pkg.name %> \n",
+  "version": "  Version: <%= pkg.version %> \n",
+  "description": "  Description: <%= pkg.description %> \n",
+  "repository": "  Repository: <%= pkg.repository %> \n",
+  "authorsName": "  Authors: <%= pkg.authors.name %> \n",
+  "authorsGithub": "  Github: <%= pkg.authors.github %> \n",
+  "startin": "  Start in: <%= pkg.startin %> \n",
+  "lastUpdate": "  Last update: <%= grunt.template.today('dd/mm/yyyy') %> \n*/\n"
+}

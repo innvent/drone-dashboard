@@ -1,0 +1,28 @@
+{
+  "name": "drone-dashboard",
+  "version": "0.1.0",
+  "description": "Drone Dashboard",
+  "repository": "https://github.com/",
+  "authors": {
+    "name": "Gabriel Mateus",
+    "github": "git.io/gabrielmateus"
+  },
+  "startin": "13/03/14",
+  "dependencies": {
+    "jquery": "~ 1.11.0",
+    "html5shiv": "latest",
+    "normalize-css": "latest"
+  },
+  "exportsOverride": {
+    "*": {
+      "javascript" : [
+        "**/dist/*.js",
+        "require.js",
+        "**/html5shiv.js"
+      ],
+      "stylesheets" : [
+        "normalize.css"
+      ]
+    }
+  }
+}

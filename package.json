@@ -1,0 +1,21 @@
+{
+  "name": "drone-dashboard",
+  "version": "1.0.0",
+  "description": "Drone Dashboard",
+  "repository": "https://github.com/",
+  "authors": {
+    "name": "Gabriel Mateus",
+    "github": "git.io/gabrielmateus"
+  },
+  "startin": "13/03/14",
+  "devDependencies": {
+    "grunt": "~ 0.4.1",
+    "grunt-notify": "~ 0.2.13",
+    "load-grunt-tasks": "~0 .2.1",
+    "grunt-contrib-less": " ~ 0.6.0",
+    "grunt-contrib-watch": "~ 0.5.0",
+    "grunt-banner": "~ 0.2.0",
+    "time-grunt": "~ 0.2.9",
+    "grunt-bower-task": "~0.3.4"
+  }
+}
