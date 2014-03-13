@@ -30,15 +30,20 @@ def retrieve_repositories_status()
   repositories_status
 end
 
-get '/' do
+get '/statuses' do
   repositories_status = retrieve_repositories_status
   erb :index, :locals => { :repositories_status => repositories_status }
 end
 
 get '/statuses.json' do
   content_type :json
-  retrieve_repositories_status().to_json
+  repos_hash = { repositories: [] }
+  repos_status = retrieve_repositories_status()
 
+  repos_status.each do |k, v|
+    repos_hash[:repositories] << {name: k, status: v}
+  end
+  repos_hash.to_json
 end
 
 
