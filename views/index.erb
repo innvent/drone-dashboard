@@ -7,5 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-  Ativore status: <%= build_status %>
+  <% repositories_status.each do |repo, status| %>
+    <p> <%= repo %>: <%= status %> </p>
+  <% end %>
 </body>

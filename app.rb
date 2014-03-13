@@ -9,11 +9,22 @@ configure :development do
   BetterErrors.application_root = File.expand_path('..', __FILE__)
 end
 
+repositories = %w(
+  ***REMOVED***
+  ***REMOVED***
+  ***REMOVED***
+)
+
 get '/' do
-  uri = URI('http://***REMOVED***/github.com/***REMOVED***/status.png?branch=master')
-  response = Net::HTTP.get_response(uri)
-  location = response.header['Location']
-  match = /build-(\w+)-\w+.png/i.match location
-  build_status = match.captures[0]
-  erb :index, :locals => { :build_status => build_status }
+  repositories_status = Hash.new
+  repositories.each do |repo|
+    uri = URI("http://***REMOVED***/github.com/#{repo}/status.png?branch=master")
+
+    response = Net::HTTP.get_response(uri)
+    location = response.header['Location']
+    match = /build-(\w+)-\w+.png/i.match location
+
+    repositories_status[repo.to_sym] = match.captures[0]
+  end
+  erb :index, :locals => { :repositories_status => repositories_status }
 end
