@@ -2,6 +2,7 @@ require 'sinatra'
 require 'better_errors'
 require 'json'
 require 'net/http'
+require 'yaml'
 
 configure :development do
   use BetterErrors::Middleware
@@ -10,15 +11,15 @@ configure :development do
   BetterErrors.application_root = File.expand_path('..', __FILE__)
 end
 
-def retrieve_repositories_status()
-  repositories = %w(
+set :repositories, %w(
     ***REMOVED***
     ***REMOVED***
     ***REMOVED***
   )
 
+def retrieve_repositories_status()
   repositories_status = Hash.new
-  repositories.each do |repo|
+  options.repositories.each do |repo|
     uri = URI("http://***REMOVED***/github.com/#{repo}/status.png?branch=master")
 
     response = Net::HTTP.get_response(uri)
