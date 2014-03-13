@@ -1,6 +1,8 @@
 
-// Wrappers
-// =======================================================
+*,
+*:before,
+*:after { .box-sizing(border-box) }
+
 html { font-size: 62.5% }
 
 html, body {
@@ -9,12 +11,57 @@ html, body {
 }
 
 body {
-  color: @c-default;
+  color: @text-color;
   .font-size(14,16);
   font-weight: 400;
   font-family: @f-helvetica;
+  background: @bg-color;
   overflow-x: hidden;
-  background: @bg-default;
   -webkit-font-smoothing: antialiased;
   -webkit-overflow-scrolling: touch;
+}
+
+ul {
+  .cf;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// Repositories
+#repositories-list {
+  li {
+    .cf;
+    //margin: 0 0 1rem;
+  }
+}
+
+.repo-name,
+.repo-status {
+  &:extend(.left);
+  width: 49.8%;
+  margin: 0;
+  padding: 8rem 0;
+  text-align: center;
+  .font-size(40, 44);
+}
+
+.repo-name {
+  text-shadow: 0 2px 1px fadeout(darken(@dark-gray, 20%), 60%);
+  .gradient(@dark-gray, 0%, darken(@dark-gray, 10%), 100%);
+}
+
+// Status
+.unknow {
+  text-shadow: 0 2px 1px fadeout(darken(@light-gray, 20%), 60%);
+  .gradient(@light-gray, 0%, darken(@light-gray, 10%), 100%)
+}
+
+.success {
+  text-shadow: 0 2px 1px fadeout(darken(@green, 20%), 60%);
+  .gradient(@green, 0%, darken(@green, 10%), 100%)
+}
+.error {
+  text-shadow: 0 2px 1px fadeout(darken(@red, 20%), 60%);
+  .gradient(@red, 0%, darken(@red, 10%), 100%)
 }

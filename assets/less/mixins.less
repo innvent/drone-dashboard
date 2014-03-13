@@ -304,6 +304,17 @@
   border-radius: @x;
 }
 
+.gradient (@startColor: #eee, @startAmount: 0%, @endColor: #fff, @endAmount: 0%) {
+  background-color: @startColor;
+  background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+  background: -webkit-linear-gradient(top, @startColor @startAmount, @endColor @endAmount);
+  background: -moz-linear-gradient(top, @startColor @startAmount, @endColor @endAmount);
+  background: -ms-linear-gradient(top, @startColor @startAmount, @endColor @endAmount);
+  background: -o-linear-gradient(top, @startColor @startAmount, @endColor @endAmount);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@startColor', endColorstr='@endColor', GradientType=1);
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@startColor',endColorstr='@endColor',GradientType=1);
+}
+
 .animation (@name, @duration: 300ms, @interaction: 1, @delay: 0, @ease: ease) {
   -webkit-animation: @name @duration @interaction @delay @ease;
   -moz-animation: @name @duration @interaction @delay @ease;
