@@ -16,6 +16,7 @@ set :repositories, %w(
     ***REMOVED***
     ***REMOVED***
   )
+set :public_folder, 'assets/'
 
 def retrieve_repositories_status()
   repositories_status = Hash.new
