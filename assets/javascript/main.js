@@ -13,9 +13,7 @@ function get_statuses() {
         ).replace( /{{ status }}/ig, val.status )
       );
     });
-    console.log(items);
-    $("#repositories-list").empty();
-    $("#repositories-list").append(items.join( "" ));
+    $("#repositories-list").html(items.join( "" ));
     setTimeout(function() {
       get_statuses();
     }, 10000);
