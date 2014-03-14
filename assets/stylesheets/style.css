@@ -171,14 +171,14 @@ ul:after {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@startColor', endColorstr='@endColor', GradientType=1);
   -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@startColor', endColorstr='@endColor', GradientType=1);
 }
-.error {
-  text-shadow: 0 2px 1px rgba(163, 49, 27, 0.4);
-  background-color: #e05d44;
-  background: -webkit-gradient(linear, left top, left bottom, from(#e05d44), to(#cf3e22));
-  background: -webkit-linear-gradient(top, #e05d44 0%, #cf3e22 100%);
-  background: -moz-linear-gradient(top, #e05d44 0%, #cf3e22 100%);
-  background: -ms-linear-gradient(top, #e05d44 0%, #cf3e22 100%);
-  background: -o-linear-gradient(top, #e05d44 0%, #cf3e22 100%);
+.failure {
+  text-shadow: 0 2px 1px rgba(122, 31, 31, 0.4);
+  background-color: #cc3333;
+  background: -webkit-gradient(linear, left top, left bottom, from(#cc3333), to(#a32929));
+  background: -webkit-linear-gradient(top, #cc3333 0%, #a32929 100%);
+  background: -moz-linear-gradient(top, #cc3333 0%, #a32929 100%);
+  background: -ms-linear-gradient(top, #cc3333 0%, #a32929 100%);
+  background: -o-linear-gradient(top, #cc3333 0%, #a32929 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@startColor', endColorstr='@endColor', GradientType=1);
   -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@startColor', endColorstr='@endColor', GradientType=1);
 }
