@@ -15,6 +15,10 @@
         {
             "name": "org2/projeto2",
             "status": "failure"
+        },
+        {
+            "name": "org3/projeto1",
+            "status": "success"
         }
     ]
 }

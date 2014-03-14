@@ -131,12 +131,12 @@ ul:after {
 .repo-status {
   width: 50%;
   margin: 0;
-  padding: 8rem 0;
+  padding: 6rem 0;
   text-align: center;
-  font-size: 40px;
-  line-height: 44px;
-  font-size: 4rem;
-  line-height: 4.4rem;
+  font-size: 46px;
+  line-height: 50px;
+  font-size: 4.6rem;
+  line-height: 5rem;
 }
 .repo-name {
   text-shadow: 0 2px 1px rgba(34, 34, 34, 0.4);
