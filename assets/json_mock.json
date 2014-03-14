@@ -1,0 +1,20 @@
+{
+    "repositories": [
+        {
+            "name": "org1/projeto1",
+            "status": "success"
+        },
+        {
+            "name": "org1/projeto2",
+            "status": "unknown"
+        },
+        {
+            "name": "org2/projeto1",
+            "status": "success"
+        },
+        {
+            "name": "org2/projeto2",
+            "status": "failure"
+        }
+    ]
+}

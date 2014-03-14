@@ -1,16 +1,27 @@
-// Get Json
-(function ($) {
-  var jsonURl = 'http://localhost:5000/statuses.json';
+function get_statuses() {
+  var statuses_endpoint = window.location.search.indexOf('mock') == -1 ?
+    "http://localhost:5000/statuses.json" :
+    "http://localhost:5000/json_mock.json"
   var template = $.trim( $('#template').html() );
-  var frag = '';
 
-  $.getJSON(jsonURl,function(data){
-    $.each(data.repositories, function(i, obj){
-      frag += template.replace( /{{ name }}/ig, obj.name ).replace( /{{ status }}/ig, obj.status );
+  $.getJSON(statuses_endpoint, function( data ) {
+    var items = [];
+    $.each(data.repositories, function( key, val ) {
+      items.push(
+        template.replace(
+          /{{ name }}/ig, val.name
+        ).replace( /{{ status }}/ig, val.status )
+      );
     });
-    $("#repositories-list").append(frag);
+    console.log(items);
+    $("#repositories-list").empty();
+    $("#repositories-list").append(items.join( "" ));
+    setTimeout(function() {
+      get_statuses();
+    }, 10000);
   });
+}
 
-  $("#template").remove();
-
-})(jQuery);
+$(function(){
+   get_statuses();
+});
