@@ -22,4 +22,7 @@ function get_statuses() {
 
 $(function(){
    get_statuses();
+   setTimeout(function(){
+      window.location.reload(1);
+   }, 180000);
 });
