@@ -16,6 +16,7 @@ app_config = YAML.load_file 'config.yml'
 set :drone_url, app_config["drone_url"]
 set :repositories, app_config["repositories"]
 set :public_folder, 'assets/'
+set :server, 'thin'
 
 def retrieve_repositories_status()
   repositories_status = Hash.new
