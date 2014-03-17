@@ -4,6 +4,6 @@ module.exports = {
       '<%= paths.less %>**/*.less',
       '<%= paths.less %>*.less'
     ],
-    tasks: ['less', 'usebanner']
+    tasks: ['less']
   }
 }

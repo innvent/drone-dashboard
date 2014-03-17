@@ -14,7 +14,6 @@
     "load-grunt-tasks": "~0 .2.1",
     "grunt-contrib-less": "^0.10.0",
     "grunt-contrib-watch": "^0.6.0",
-    "grunt-banner": "~ 0.2.0",
     "time-grunt": "~ 0.2.9",
     "grunt-bower-task": "~0.3.4"
   }

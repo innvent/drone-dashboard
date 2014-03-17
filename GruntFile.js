@@ -15,17 +15,15 @@ module.exports = function(grunt) {
   require('time-grunt')(grunt);
 
   function config(name){
-    return require("./grunt-tasks/" + name);
+    return require("./tasks/" + name);
   }
 
   // Tasks configurations
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    paths: grunt.file.readJSON('grunt-paths.json'),
-    banner: grunt.file.readJSON('grunt-banner.json'),
+    paths: grunt.file.readJSON('paths.json'),
     less: config("less"),
     bower: config("bower"),
-    usebanner: config("usebanner"),
     watch: config("watch")
   });
 
@@ -33,5 +31,5 @@ module.exports = function(grunt) {
   grunt.registerTask('build', ['bower']);
 
   // Default task
-  grunt.registerTask('default', ['less', 'usebanner', 'watch', 'notify']);
+  grunt.registerTask('default', ['less', 'watch', 'notify']);
 };
