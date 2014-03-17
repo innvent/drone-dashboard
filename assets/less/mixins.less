@@ -65,16 +65,17 @@
   vertical-align: middle;
 }
 
-.font-size(@sizeValue: 14, @lineHeight: 16) {
-  @remValue: (@sizeValue/10);
-  @lineRem: (@lineHeight/10);
-  @pxValue: (@sizeValue);
-  @linePx: (@lineHeight);
-  font-size: ~"@{pxValue}px";
-  line-height: ~"@{linePx}px";
-  font-size: ~"@{remValue}rem";
-  line-height: ~"@{lineRem}rem";
+.font-size(@fonteSize: @font-size-base, @lineHeight: @line-heigh-base) {
+  @val: (@fonteSize / @font-size-base);
+  @val2: (@lineHeight / @line-heigh-base);
+  font-size: ~"@{val}em";
+  line-height: ~"@{val2}em";
 }
+
+.em-font-size( @value: @base-font-size, @context: @base-font-size ) {
+  font-size: (@value / @context) + 0em;
+}
+
 
 .ellipsis {
   overflow: hidden;
@@ -84,7 +85,7 @@
 
 // Media Queries
 .mobile(@rules) {
-  @media screen and (max-width: 480) { @rules(); }
+  @media (max-width: 480px) { @rules(); }
 }
 
 // Helpful Functions

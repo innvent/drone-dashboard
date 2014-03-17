@@ -425,9 +425,6 @@ th {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-html {
-  font-size: 62.5%;
-}
 html,
 body {
   width: 100%;
@@ -435,14 +432,12 @@ body {
 }
 body {
   color: #ffffff;
-  font-size: 14px;
-  line-height: 16px;
-  font-size: 1.4rem;
-  line-height: 1.6rem;
+  font-size: 1em;
+  line-height: 1.1111111111111112em;
   font-weight: 400;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background: #9f9f9f;
-  overflow-x: hidden;
+  overflow: hidden;
   -webkit-font-smoothing: antialiased;
   -webkit-overflow-scrolling: touch;
 }
@@ -471,20 +466,16 @@ ul:after {
 .repo-status {
   width: 50%;
   margin: 0;
-  padding: 6rem 0;
+  padding: 3.64rem 0;
   text-align: center;
-  font-size: 46px;
-  line-height: 50px;
-  font-size: 4.6rem;
-  line-height: 5rem;
+  font-size: 2.875em;
+  line-height: 2.6666666666666665em;
 }
-@media screen and (max-width: 480) {
+@media (max-width: 480px) {
   .repo-name,
   .repo-status {
-    font-size: 20px;
-    line-height: 25px;
-    font-size: 2rem;
-    line-height: 2.5rem;
+    font-size: 1.25em;
+    line-height: 1.3888888888888888em;
   }
 }
 .repo-name {
