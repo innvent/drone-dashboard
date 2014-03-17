@@ -21,11 +21,11 @@ set :server, 'thin'
 def retrieve_repositories_status()
   repositories_status = Hash.new
   settings.repositories.each do |repo|
-    uri = URI("#{settings.drone_url}/github.com/#{repo['name']}/status.png?branch=#{repo['branch']}")
+    uri = URI("#{settings.drone_url}/github.com/#{repo['name']}/status.svg?branch=#{repo['branch']}")
 
     response = Net::HTTP.get_response uri
     location = response.header['Location']
-    match = /build-(\w+)-\w+.png/i.match location
+    match = /build-(\w+)-\w+.svg/i.match location
 
     repositories_status[repo['name'].to_sym] = match.captures[0]
   end
