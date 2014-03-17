@@ -1,7 +1,7 @@
 function get_statuses() {
   var statuses_endpoint = window.location.search.indexOf('mock') == -1 ?
-    "http://localhost:5000/statuses.json" :
-    "http://localhost:5000/json_mock.json"
+    "/statuses.json" :
+    "/json_mock.json"
   var template = $.trim( $('#template').html() );
 
   $.getJSON(statuses_endpoint, function( data ) {
@@ -22,4 +22,7 @@ function get_statuses() {
 
 $(function(){
    get_statuses();
+   setTimeout(function(){
+      window.location.reload(1);
+   }, 180000);
 });

@@ -11,3 +11,7 @@ group :development do
   gem 'pry', '~> 0.9'
   gem 'rerun', '~> 0.9'
 end
+
+group :production do
+  gem 'thin', '~> 1.6'
+end
