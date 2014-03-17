@@ -29,9 +29,12 @@ module.exports = function(grunt) {
     watch: config("watch")
   });
 
-  // Default task
+  // Build task
   grunt.registerTask('build', ['bower']);
 
   // Default task
-  grunt.registerTask('default', ['less', 'cssmin', 'uglify', 'watch', 'notify']);
+  grunt.registerTask('default', ['less', 'watch', 'notify']);
+
+  // Deploy task
+  grunt.registerTask('deploy', ['cssmin', 'uglify']);
 };
