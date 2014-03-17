@@ -5,5 +5,11 @@ module.exports = {
       '<%= paths.less %>*.less'
     ],
     tasks: ['less', 'cssmin']
+  },
+  javascript: {
+    files: [
+      '<%= paths.javascript %>*.js'
+    ],
+    tasks: ['uglify']
   }
 }

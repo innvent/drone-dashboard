@@ -7,13 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="stylesheets/style.css">
+  <link rel="stylesheet" href="stylesheets/style.min.css">
 </head>
 <body>
 
   <ul id="repositories-list"></ul>
 
-  <script id=template type=tuts/template>
+  <script id=template type=js/template>
     <li>
       <h2 class="repo-name">{{ name }}</h2>
       <h3 class="repo-status {{ status }}">{{ status }}</h3>
@@ -23,5 +23,5 @@
   <!-- Javascripts -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="assets/javascript/jquery/jquery.min.js"><\/script>')</script>
-  <script src="javascript/main.js"></script>
+  <script src="javascript/custom.min.js"></script>
 </body>
