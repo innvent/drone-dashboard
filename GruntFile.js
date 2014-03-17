@@ -23,6 +23,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     paths: grunt.file.readJSON('paths.json'),
     less: config("less"),
+    cssmin: config("cssmin"),
     bower: config("bower"),
     watch: config("watch")
   });
@@ -31,5 +32,5 @@ module.exports = function(grunt) {
   grunt.registerTask('build', ['bower']);
 
   // Default task
-  grunt.registerTask('default', ['less', 'watch', 'notify']);
+  grunt.registerTask('default', ['less', 'cssmin', 'watch', 'notify']);
 };

@@ -76,56 +76,19 @@
   line-height: ~"@{lineRem}rem";
 }
 
-.bg-dark-transparent {
-  color: #fff;
-  background: #0d4759;
-  background: rgba(0, 60, 74, 0.9);
-}
-
 .ellipsis {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 
+// Media Queries
+.mobile(@rules) {
+  @media screen and (max-width: 480) { @rules(); }
+}
+
 // Helpful Functions
 // ========================================================================== */
-
-// Buttons Actions
-// ------------------------------------------
-.button-actions(@background, @amount) {
-  background: @background;
-  .transition(all .1s ease);
-
-  &:hover { background: saturate(@background, @amount) }
-
-  &:active,
-  &.open { background: saturate(@background, @amount + 2) }
-}
-
-
-// Icons Actions
-// ------------------------------------------
-.icon-actions(@color, @amount) {
-  color: @color;
-  .transition(all .1s ease);
-
-  &:hover { color: darken(@color, @amount) }
-
-  &:active,
-  &.open { color: darken(@color, @amount + 6) }
-}
-
-// Icon Animation
-// ------------------------------------------
-.icon-animation(@class, @left) {
-  &:hover {
-    .@{class} {
-      left: @left;
-    }
-  }
-}
-
 
 // Center-align a block level element
 // ----------------------------------
@@ -135,14 +98,12 @@
   margin-right: auto;
 }
 
-
 // Rounded Circle
 // -----------------------------------
 .rounded(@x) {
   .square(@x);
   .border-radius(100%);
 }
-
 
 // Sizing shortcuts
 // -------------------------
@@ -209,12 +170,6 @@
   background-color: transparent;
   border: 0;
 }
-
-.size(@size: auto){
-  width: @size;
-  height: @size;
-}
-
 
 /*  Helpful Mixins
    ========================================================================== */
