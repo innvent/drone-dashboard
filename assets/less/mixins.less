@@ -84,9 +84,27 @@
 }
 
 // Media Queries
+// ========================================================================== */
+.desktop(@rules) {
+  @media (min-width: 1025px) { @rules(); }
+}
+
+.desktop-small(@rules) {
+  @media (min-width: 768px) and (max-width: 1024px) { @rules(); }
+}
+
+.tablet(@rules) {
+  @media (min-width: 481px) and (max-width: 767px) { @rules(); }
+}
+
+.max520(@rules) {
+  @media (max-width: 520px) { @rules(); }
+}
+
 .mobile(@rules) {
   @media (max-width: 480px) { @rules(); }
 }
+
 
 // Helpful Functions
 // ========================================================================== */

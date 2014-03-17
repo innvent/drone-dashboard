@@ -466,16 +466,37 @@ ul:after {
 .repo-status {
   width: 50%;
   margin: 0;
-  padding: 3.64rem 0;
+  padding: .84em 0;
   text-align: center;
   font-size: 2.875em;
   line-height: 2.6666666666666665em;
 }
+@media (min-width: 768px) and (max-width: 1024px) {
+  .repo-name,
+  .repo-status {
+    font-size: 2.25em;
+    line-height: 2.111111111111111em;
+  }
+}
+@media (max-width: 520px) {
+  .repo-name,
+  .repo-status {
+    float: none;
+    width: 100%;
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  .repo-name,
+  .repo-status {
+    font-size: 1.5em;
+    line-height: 1.4444444444444444em;
+  }
+}
 @media (max-width: 480px) {
   .repo-name,
   .repo-status {
-    font-size: 1.25em;
-    line-height: 1.3888888888888888em;
+    font-size: 0.875em;
+    line-height: 1em;
   }
 }
 .repo-name {

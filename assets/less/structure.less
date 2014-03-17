@@ -38,12 +38,25 @@ ul {
   &:extend(.left);
   width: 50%;
   margin: 0;
-  padding: 3.64rem 0;
+  padding: .84em 0;
   text-align: center;
   .font-size(46, 48);
 
+  .desktop-small({
+    .font-size(36, 38);
+  });
+
+  .max520({
+    float: none;
+    width: 100%;
+  });
+
+  .tablet({
+    .font-size(24, 26);
+  });
+
   .mobile({
-    .font-size(20, 25);
+    .font-size(14, 18);
   });
 }
 
@@ -62,6 +75,7 @@ ul {
   text-shadow: 0 2px 1px fadeout(darken(@green, 20%), 60%);
   .gradient(@green, 0%, darken(@green, 10%), 100%)
 }
+
 .failure {
   text-shadow: 0 2px 1px fadeout(darken(@red, 20%), 60%);
   .gradient(@red, 0%, darken(@red, 10%), 100%)
