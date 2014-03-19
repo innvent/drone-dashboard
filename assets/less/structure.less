@@ -28,55 +28,120 @@ ul {
 
 // Repositories
 #repositories-list {
+  .min520({
+    .flex();
+    .flex-direction(column);
+    height: 100%;
+  });
+
   li {
-    .cf;
+    .min520({
+      position: relative;
+      height: 100%;
+      order: 0;
+      flex: 1 1 auto;
+      min-width: 0px;
+      min-height: 0px;
+      .dark-bg;
+      z-index: 1;
+      display: -webkit-flexbox;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      text-align: center;
+    });
+  }
+
+  .success,
+  .unknown,
+  .failure {
+    &:after {
+      .min520({
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        z-index: 1;
+      });
+    }
+  }
+
+  .success {
+    &:after {
+      text-shadow: 0 2px 1px fadeout(darken(@green, 20%), 60%);
+      .gradient(@green, 0%, darken(@green, 10%), 100%);
+    }
+  }
+
+  .unknown {
+    &:after {
+      text-shadow: 0 2px 1px fadeout(darken(@light-gray, 20%), 60%);
+      .gradient(@light-gray, 0%, darken(@light-gray, 10%), 100%);
+    }
+  }
+
+  .failure {
+    &:after {
+      text-shadow: 0 2px 1px fadeout(darken(@red, 20%), 60%);
+      .gradient(@red, 0%, darken(@red, 10%), 100%);
+    }
   }
 }
 
+.repo-wrapper { width: 100% }
+
 .repo-name,
 .repo-status {
+  position: relative;
   &:extend(.left);
   width: 50%;
+  height: 100%;
   margin: 0;
-  padding: .84em 0;
   text-align: center;
   .font-size(46, 48);
+  z-index: 2;
 
-  .desktop-small({
-    .font-size(36, 38);
-  });
-
-  .max520({
-    float: none;
-    width: 100%;
+  .desktop-max({
+    padding: .84em 0;
   });
 
   .tablet({
-    .font-size(24, 26);
+    .font-size(30, 26);
   });
 
-  .mobile({
-    .font-size(14, 18);
+  .max519({
+    float: none;
+    width: 100%;
+    .font-size(18, 22);
   });
 }
 
 .repo-name {
-  text-shadow: 0 2px 1px fadeout(darken(@dark-gray, 20%), 60%);
-  .gradient(@dark-gray, 0%, darken(@dark-gray, 10%), 100%);
+  .max519({
+    .dark-bg;
+  });
 }
 
-// Status
-.unknown {
-  text-shadow: 0 2px 1px fadeout(darken(@light-gray, 20%), 60%);
-  .gradient(@light-gray, 0%, darken(@light-gray, 10%), 100%)
-}
-
-.success {
-  text-shadow: 0 2px 1px fadeout(darken(@green, 20%), 60%);
-  .gradient(@green, 0%, darken(@green, 10%), 100%)
-}
-
-.failure {
-  text-shadow: 0 2px 1px fadeout(darken(@red, 20%), 60%);
-  .gradient(@red, 0%, darken(@red, 10%), 100%)
+.status {
+  &-success {
+    .max519({
+      .success;
+    });
+  }
+  &-unknown {
+    .max519({
+      .unknown;
+    });
+  }
+  &-failure {
+    .max519({
+      .failure;
+    });
+  }
 }

@@ -72,38 +72,68 @@
   line-height: ~"@{val2}em";
 }
 
-.em-font-size( @value: @base-font-size, @context: @base-font-size ) {
-  font-size: (@value / @context) + 0em;
-}
-
-
 .ellipsis {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 
+// Status
+.dark-bg {
+  text-shadow: 0 2px 1px fadeout(darken(@dark-gray, 20%), 60%);
+  .gradient(@dark-gray, 0%, darken(@dark-gray, 10%), 100%);
+}
+
+.unknown {
+  text-shadow: 0 2px 1px fadeout(darken(@light-gray, 20%), 60%);
+  .gradient(@light-gray, 0%, darken(@light-gray, 10%), 100%);
+}
+
+.success {
+  text-shadow: 0 2px 1px fadeout(darken(@green, 20%), 60%);
+  .gradient(@green, 0%, darken(@green, 10%), 100%);
+}
+
+.failure {
+  text-shadow: 0 2px 1px fadeout(darken(@red, 20%), 60%);
+  .gradient(@red, 0%, darken(@red, 10%), 100%);
+}
+
 // Media Queries
 // ========================================================================== */
+
 .desktop(@rules) {
   @media (min-width: 1025px) { @rules(); }
 }
 
+.desktop-min(@rules) {
+  @media (min-width: 960px) { @rules(); }
+}
+
+.desktop-max(@rules) {
+  @media (max-width: 959px) { @rules(); }
+}
+
 .desktop-small(@rules) {
-  @media (min-width: 768px) and (max-width: 1024px) { @rules(); }
+  @media (max-width: 1024px) { @rules(); }
 }
 
 .tablet(@rules) {
-  @media (min-width: 481px) and (max-width: 767px) { @rules(); }
+  @media (min-width: 521px) and (max-width: 767px) { @rules(); }
 }
 
-.max520(@rules) {
-  @media (max-width: 520px) { @rules(); }
+.max767(@rules) {
+  @media (max-width: 767px) { @rules(); }
 }
 
-.mobile(@rules) {
-  @media (max-width: 480px) { @rules(); }
+.max519(@rules) {
+  @media (max-width: 519px) { @rules(); }
 }
+
+.min520(@rules) {
+  @media (min-width: 520px) { @rules(); }
+}
+
 
 
 // Helpful Functions
@@ -301,3 +331,36 @@
 .reset-filter() {
   filter: e(%("progid:DXImageTransform.Microsoft.gradient(enabled = false)"));
 }
+
+.flex() {
+  display: -webkit-box;
+  display: -moz-box;
+  display:-webkit-flex;
+  display: -ms-flexbox;
+  display:flex;
+}
+
+.flex-direction(@direction) {
+  -ms-flex-direction:@direction;
+ -webkit-flex-direction:@direction;
+  flex-direction:@direction;
+}
+
+// #teste() {
+//   .padding-6 { padding: 1em 0 }
+//   .padding-5 { padding: 1.5em 0; }
+//   .padding-4 { padding: 2em 0; }
+//   .padding-3 { padding: 3em 0; }
+//   .padding-2 { padding: 4em 0; }
+// }
+
+
+// .mixin (@a) when (@a = 6) { #teste > .padding-6; }
+// .mixin (@a) when (@a = 5) { #teste > .padding-5; }
+// .mixin (@a) when (@a = 4) { #teste > .padding-4; }
+// .mixin (@a) when (@a = 3) { #teste > .padding-3; }
+// .mixin (@a) when (@a = 2) { #teste > .padding-2; }
+
+// .teste {
+//   .mixin(5);
+// }
