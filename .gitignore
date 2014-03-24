@@ -36,3 +36,6 @@ build/
 ## Front End
 bower_components/
 node_modules/
+
+# Project specific
+/config.yml

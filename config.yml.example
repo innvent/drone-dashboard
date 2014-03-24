@@ -1,0 +1,12 @@
+drone_url: http://drone.example.com
+repositories:
+  - name: org1/repo1
+    branch: master
+  - name: org1/repo2
+    branch: develop
+  - name: org2/repo1
+    branch: master
+  - name: org2/repo2
+    branch: master
+  - name: org2/repo3
+    branch: drone
